@@ -28,4 +28,26 @@
  */
 var processQueries = function(queries, m) {
     
+    /**
+     * ES6 Array Spread syntax
+     * The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+    **/
+    let P = [...Array(m)].map((_, idx) => idx + 1);
+
+    let output = []; // initialize an empty array to hold the answer
+    
+    // Loop through each item in queries
+    queries.forEach(item => {
+
+        // Push the index to the end of the output array
+        let index = P.indexOf(item);
+        output.push(index);
+
+        // Permute the array P
+        P.unshift(item);
+        P.splice(index + 1, 1);
+    });
+
+    return output;
 };
+
