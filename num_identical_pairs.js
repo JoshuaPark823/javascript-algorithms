@@ -18,13 +18,14 @@ const numIdenticalPairs = (nums) => {
 
     let count = 0;
     
-    // start i from index 0, j from the final index, and have them "close in" on eachother.
-    // stops when i strictly < j 
-    for (let i = 0,j = nums.length - 1; i < j; i++, j--) {
+    // start i from index 0, iterate until the end
+    for (let i = 0; i < nums.length - 1; i++) {
 
-        // if we find a good pair, incr the count
-        if (nums[i] === nums[j]) {
-            count++;
+        // start j from the end per iteration, solely if j > i
+        for (let j = nums.length - 1; i < j; j--) {
+            if (nums[i] == nums[j]) {
+                count++;
+            }
         }
     }
 
