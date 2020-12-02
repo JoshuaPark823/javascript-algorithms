@@ -10,6 +10,8 @@
 - Time complexity will be included in the commit message.
 
 ### Contents
-* queries_permutation.js : Queries on a Permutation With Key
+* queries_permutation.js : Queries on a permutation with key
+* matrix_diag_sum.js : Sum of all diagonals of a matrix
+* num_idential_pairs.js : Number of identical elements conditional to the index
 
 
