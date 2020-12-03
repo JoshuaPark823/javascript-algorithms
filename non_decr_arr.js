@@ -14,43 +14,47 @@
  */
 const checkPossibility = (nums) => {
     
-    /**
-     * logic:
-     * initialize a flag
-     * iterate through, if we see that a[i] > a[i + 1], then toggle the flag
-     * keep iterating, 
-     * if we find another, it'll enter the flag conditional
-     * if the flag had already been toggled before, return false
-     * if the flag is ONLY toggled once, return true
-     * 
-     * 
-     * is there a way we can just break out of the loop and return false if its already set?
-     */
+    // Base case, trivially true
+    if (nums.length <= 2) {
+        return true;
+    }
 
-    let flag = 0;
+    // Assign a boolean, initialize as first/second check
+    let first = nums[0] <= nums[1];
 
-    // goes from a[0] -> a[l-2] (second last)
-    for (let i = 0; i <= nums.length - 2; i++) {
+    // Iterate from the second val to the end
+    for (let i = 1; i < nums.length - 1; i++) {
 
+        // If the current val is bigger than the next
         if (nums[i] > nums[i + 1]) {
-            flag++;
+
+            // Check the first/second check
+            if (first) {
+
+                // If next is smaller than previous, set the next as the current
+                if (nums[i + 1] < nums[i - 1]) {
+                    nums[i + 1] = nums[i];
+                }
+
+                first = false; // Set the first boolean as false
+            }
+
+            else {
+
+                // We're dynamically replacing the first boolean, so if its false, we know the condition is violated
+                return false; 
+            }
         }
     }
 
-    if (flag > 1) {
-        return false;
-    }
-    else {
-        if (flag > 0) {
-            return true;
-        }
-    }
+    return true;
+
 };
 
 // TESTING
 console.log(checkPossibility(([4,2,3])));
 console.log(checkPossibility(([4,2,1])));
-console.log(checkPossibility(([3,4,2,3]))); //shit need to check all previous, cuz if we change 4, n[1] still > than 2
+console.log(checkPossibility(([3,4,2,3])));
 
 
 
