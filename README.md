@@ -10,8 +10,8 @@
 - Time complexity will be included in the commit message.
 
 ### Contents
-* queries_permutation.js : Queries on a permutation with key
-* matrix_diag_sum.js : Sum of all diagonals of a matrix
-* num_idential_pairs.js : Number of identical elements conditional to the index
-
+* queries_permutation.js : Queries on a permutation with key.
+* matrix_diag_sum.js : Sum of all diagonals of a matrix.
+* num_idential_pairs.js : Number of identical elements conditional to the index.
+* non_decr_arr.js : Given an array nums with n ints, check if it could become non-decreasing by modifying at most 1 element.
 
