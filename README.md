@@ -1,7 +1,7 @@
 # Collection of Algorithmic Solutions written in JavaScript ES6
 ## Data Structures & Algorithms Implemented with JS ES6
 
-![Screenshot](./assets/banner.png)
+![Screenshot](assets/banner.png)
 
 ### Purpose
 - To gain further proficiency with Data Structures and Algorithms using JavaScript and ES6.
@@ -15,7 +15,7 @@
 
 ### Time Complexity Overview
 
-![Screenshot](./assets/bigo.jpg)
+![Screenshot](assets/bigo.jpg)
 
 ### Structure
 - Top: Prompt, constraints, and example input/output
