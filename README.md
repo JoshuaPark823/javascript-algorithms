@@ -15,7 +15,7 @@
 
 ### Time Complexity Overview
 
-![Alt text](/assets/bigo.jpg)
+![Alt text](/assets/bigo.png)
 
 ### Structure
 - Top: Prompt, constraints, and example input/output
