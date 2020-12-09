@@ -24,35 +24,32 @@ function TreeNode(val, left, right) {
 
 /**
  * @param {TreeNode} root
- * @return {boolean}
+ * @return {boolean} Returns if the tree is height-balanced.
  */
 const isBalanced = (root) => {
 
-    // Define a recursive function that calculates the minimum depth
-    const minDepth = (node) => {
-        if(typeof node == null) {
+    /**
+     * @param {TreeNode} node
+     * @return {Number} Returns the maximum height of the subtrees
+     */
+    const maxHeight = (node) => {
+
+        if (node == null) { 
             return 0;
         }
 
-        // return 1 + the minimum between the left and right subtrees
-        return 1 + Math.min(minDepth(node.left), minDepth(node.right));
+        let left = maxHeight(node.left);
+        let right = maxHeight(node.right);
+
+        // If the balancing property ever breaks, return -1, check both the left and right
+        // subtrees each recursive call.
+        if (left == -1 || right == -1 || Math.abs(right - left) > 1) {
+            return -1;
+        }
+
+        return 1 + Math.max(left, right);
     };
 
-    // Define a recursive function that calculates the maximum depth
-    const maxDepth = (node) => {
-        if(typeof node == null) {
-            return 0;
-        }
-
-        return 1 + Math.max(maxDepth(node.left), maxDepth(node.right));
-    }
-
-    // To check if the tree is balanced, compare the minDepth with the maxDepth of the node
-
-    if (typeof root == null) {
-        return undefined;
-    }
-
-    // Check balancing property
-    return maxDepth(root) - minDepth(root) <= 1 ? true : false;
+    // If maxHeight(root) is never -1, means all subtres satisfy the property.
+    return maxHeight(root) != -1;
 };
