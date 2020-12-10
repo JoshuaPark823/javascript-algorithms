@@ -11,16 +11,17 @@
 * is_palindrome.js : Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 * reverse_linked_list.js : Reverse a singly linked list. (Iterative)
 * balance_binary_tree.js : Given a binary tree, determines if it is height-balanced. (Recursive)
+* reverse_string.js : Write a function that reverses a string.
 
-### Time Complexity Overview
+### Performance
 
-![Alt text](/assets/bigo.png)
+![Alt text](/assets/balanced_binary_tree.png)
 
 ### Structure
 - Top: Prompt, constraints, and example input/output
 - Body: Solution implemented in JavaScript
 - Commit Message: Time complexity and ES6 usage
 
-### Performance
+### Time Complexity Overview
 
-![Alt text](/assets/balanced_binary_tree.png)
+![Alt text](/assets/bigo.png)
