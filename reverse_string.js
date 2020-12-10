@@ -12,6 +12,43 @@
  * @param {character[]} s
  * @return {void} Do not return anything, modify s in-place instead.
  */
-var reverseString = function(s) {
-    
+const reverseString = (s) => {
+
+    // Iterate from 0 -> the end and vice versa simultaneously
+    for(let front = 0, back = s.length - 1; front < back; front++, back--) {
+
+        // Simple swap logic with a temp variable to hold the value
+        let temp = s[front];
+        s[front] = s[back];
+        s[back] = temp;
+    }
 };
+
+/**
+ * @param {*} none
+ * @return {void} return test results
+ */
+const testing = () => {
+
+    const test_cases = [
+        ["h","e","l","l","o"], 
+        ["H","a","n","n","a","h"]
+    ];
+
+    // Print original value
+    test_cases.forEach((output) => {
+        let original = "";
+        let reversed = "";
+        for(let i = 0; i < output.length; i++) {
+            original += output[i];
+        }
+        console.log(original);
+        reverseString(output);
+        for(let i = 0; i < output.length; i++) {
+            reversed += output[i];
+        }
+        console.log(reversed);
+    });
+};
+
+testing();
